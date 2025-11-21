@@ -1,0 +1,29 @@
+model:
+  base_model: "meta-llama/Meta-Llama-3-8B-Instruct"
+  revision: "c9d618e4e4c3d71a1cc150b76c7a6c5e97f65851"
+  tokenizer: "meta-llama/Meta-Llama-3-8B-Instruct"
+ingest:
+  data_dir: "data"
+  index_path: "chroma_db"
+  chunk_size: 1024
+  chunk_overlap: 128
+  lowercase: true
+retrieval:
+  retriever_type: "dense"
+  embedding_model: "BAAI/bge-small-en-v1.5"
+  top_k: 5
+training:
+  output_dir: "artifacts/lora-adapter"
+  lora_r: 16
+  lora_alpha: 32
+  lora_dropout: 0.05
+  learning_rate: 0.0002
+  num_train_epochs: 1
+  per_device_train_batch_size: 4
+  per_device_eval_batch_size: 4
+  gradient_accumulation_steps: 2
+  max_seq_length: 1024
+eval:
+  k_for_grounding: 3
+  val_split_ratio: 0.2
+  seed: 13

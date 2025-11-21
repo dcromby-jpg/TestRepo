@@ -1,0 +1,32 @@
+[project]
+name = "ragtool"
+version = "0.1.0"
+description = "Reproducible RAG pipeline with ingestion, retrieval, training, and evaluation."
+authors = [{name = "Test User", email = "test@example.com"}]
+readme = "README.md"
+requires-python = ">=3.10"
+dependencies = [
+  "typer==0.12.3",
+  "pydantic==2.7.1",
+  "pyyaml==6.0.1",
+  "chromadb==0.5.0",
+  "rank-bm25==0.2.2",
+  "beautifulsoup4==4.12.3",
+  "pypdf==4.2.0",
+  "transformers==4.41.1",
+  "sentence-transformers==3.0.1",
+  "torch==2.2.2",
+  "accelerate==0.30.1",
+  "datasets==2.19.1",
+  "peft==0.11.1"
+]
+
+[project.scripts]
+ragtool = "ragtool.cli:app"
+
+[tool.setuptools]
+package-dir = {"" = "."}
+packages = ["ragtool"]
+
+[tool.typer]
+color = true

@@ -1,0 +1,7 @@
+__pycache__/
+*.pyc
+.env
+.venv
+artifacts/
+chroma_db/
+*.lock
