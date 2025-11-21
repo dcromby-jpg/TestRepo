@@ -1,4 +1,4 @@
-# TestRepo RAG Toolkit
+# RAG Toolkit
 
 This repository provides a reproducible RAG workflow with ingestion, indexing, retrieval, LoRA/QLoRA-friendly fine-tuning, and evaluation exposed through a Typer CLI. Deterministic seeds and pinned model/tokenizer revisions make it easy to rerun experiments.
 
